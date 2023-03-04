@@ -28,6 +28,7 @@ const responseHandler = require('./Middlewares/responseHandler')
 app.use('/', responseHandler);
 let initRoutes = () => {
 	// including all routes
+	
 	glob("./Routes/*.js", {cwd: path.resolve("./src")}, (err, routes) => {
 		if (err) {
 			console.log("Error occured including routes");

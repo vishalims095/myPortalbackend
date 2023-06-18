@@ -2,10 +2,10 @@ var http = require ("http");
 var express = require ("express");
 var cors = require ("cors");
 var path = require ("path");
-var glob = require ("glob");
+// var glob = require ("glob");
 var bodyParser = require ("body-parser");
 var path = require("path");
-var glob = require("glob");
+// var glob = require("glob");
 const app = express();
 app.use(bodyParser.urlencoded({
     extended: true
@@ -29,15 +29,15 @@ app.use('/', responseHandler);
 let initRoutes = () => {
 	// including all routes
 	
-	glob("./Routes/*.js", {cwd: path.resolve("./src")}, (err, routes) => {
-		if (err) {
-			console.log("Error occured including routes");
-			return;
-		}
-		routes.forEach((routePath) => {
-			require(routePath).getRouter(app); // eslint-disable-line
-		});
-	});
+	// glob("./Routes/*.js", {cwd: path.resolve("./src")}, (err, routes) => {
+	// 	if (err) {
+	// 		console.log("Error occured including routes");
+	// 		return;
+	// 	}
+	// 	routes.forEach((routePath) => {
+	// 		require(routePath).getRouter(app); // eslint-disable-line
+	// 	});
+	// });
 
 	app.get('**', (req, res) => {
 		if (allowedExt.filter(ext => req.url.indexOf(ext) > 0).length > 0) {

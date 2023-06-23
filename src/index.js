@@ -6,6 +6,7 @@ var path = require ("path");
 var bodyParser = require ("body-parser");
 var path = require("path");
 // var glob = require("glob");
+const User = require('./Routes/user')
 const app = express();
 app.use(bodyParser.urlencoded({
     extended: true
@@ -26,6 +27,8 @@ app.use(express.static(path.join(__dirname, '../src/Upload')));
 app.use(cors());
 const responseHandler = require('./Middlewares/responseHandler')
 app.use('/', responseHandler);
+app.use('/', User)
+
 let initRoutes = () => {
 	// including all routes
 	

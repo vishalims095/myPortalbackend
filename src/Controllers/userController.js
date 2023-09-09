@@ -6,9 +6,9 @@ const { UserModel } = require('../Models/userModel')
 const { tripModel } = require('../Models/tripModel')
 const { viewModel } = require('../Models/viewModel')
 
-/*--------------------------------------------
+/*----------------------------------------------
 +++++++++++++++ incrementView ++++++++++++++++
----------------------------------------------*/
+-----------------------------------------------*/
 
 exports.incrementView = async(req, res) => {
 	try {
